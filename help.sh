@@ -105,3 +105,6 @@ k=0; for i in *Raws-4U*.ass ; do ((k++)) ; mv "$i" $(printf "zannoterror_%02d" $
 =====
 evince -- смотрелка pdf
 gqview -- смотрелка графики
+
+---- ищем всякое выключаем стдерр
+exec 2> /dev/null ; comm -2 -3 tags227.txt alltag.txt | xargs -I {} find ../Dupes/{}  -maxdepth 0 -type d ; exec 2>&1
