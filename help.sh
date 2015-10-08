@@ -140,3 +140,10 @@ i=0 ; for f in *.jpg ; do ((i++)); fname=`printf cat%02d.jpg "$i"` ; convert "$f
 ffmpeg -i nya.mp4 -sn -c:v vp8 -b:v 2500K -vf scale=-1:240 -quality good -threads 2 -pass 2 raw.webm
 #=============
 
+#---склейка
+ffmpeg -f concat -i input.list -y -vcodec copy -acodec copy output.mp4
+
+файл input.list внутри содержит строки:
+
+file 'd:/tempffmpeg/mov1.ts'
+file 'd:/tempffmpeg/mov2.ts'
