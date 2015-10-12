@@ -147,3 +147,9 @@ ffmpeg -f concat -i input.list -y -vcodec copy -acodec copy output.mp4
 
 file 'd:/tempffmpeg/mov1.ts'
 file 'd:/tempffmpeg/mov2.ts'
+--------------------
+
+#make feh vindow with zoom and none borders 1-key use for action copy image
+
+feh -g 640x720  -ZGx --action1 "cp %F  /run/user/1000/gvfs/smb-share\:server\=192.168.0.56\,share\=cirno/dir/" 
+/run/user/1000/gvfs/smb-share\:server\=192.168.0.56\,share\=cirno/anime_art/authors/name/*
