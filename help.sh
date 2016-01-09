@@ -153,3 +153,37 @@ file 'd:/tempffmpeg/mov2.ts'
 
 feh -g 640x720  -ZGx --action1 "cp %F  /run/user/1000/gvfs/smb-share\:server\=192.168.0.56\,share\=cirno/dir/" 
 /run/user/1000/gvfs/smb-share\:server\=192.168.0.56\,share\=cirno/anime_art/authors/name/*
+
+
+#-------------------------------
+# make video from images -framerate (1/5 - to 5) make time every imege
+ffmpeg.exe -framerate 5 -loop 1 -i b%01d.jpg -preset veryfast -crf 28 -vf "fps=25,format=yuv420p" -t 00:00:30 out1.avi
+
+#-------------------------------
+# crossfade 960x720 - frame size
+#
+ffmpeg -i 1.mp4 -i 2.mp4 -f lavfi -i color=black -filter_complex \
+"[0:v]format=pix_fmts=yuva420p,fade=t=out:st=4:d=1:alpha=1,setpts=PTS-STARTPTS[va0];\
+[1:v]format=pix_fmts=yuva420p,fade=t=in:st=0:d=1:alpha=1,setpts=PTS-STARTPTS+4/TB[va1];\
+[2:v]scale=960x720,trim=duration=9[over];\
+[over][va0]overlay[over1];\
+[over1][va1]overlay=format=yuv420[outv]" \
+-vcodec libx264 -map [outv] out.mp4
+
+#------------------------------
+#-----crossfade 2nd variand
+
+#   fade first and sec videos
+## 76:24 mean the fade out will start frame 76 and will finish 24 frames later = 1s fade out.
+## 0:25 mean the fade in will start frame 0 and will finish 25 frames later.
+
+ffmpeg -i 1.mp4 -y -vf fade=out:76:24 1f.mp4
+ffmpeg -i 2.mp4 -y -vf fade=in:0:25 2f.mp4
+
+# convert to ts
+ffmpeg -i 1f.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts 1f.ts
+ffmpeg -i 2f.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts 2f.ts
+
+# merge
+ffmpeg -i "concat:1f.ts|2f.ts" -bsf:a aac_adtstoasc -c copy output.mp4
+#------------------------------
