@@ -1,10 +1,12 @@
+#!/bin/bash
 #
 #  !!!!THIS IS NO SCRIPT FILE!!!
 #
 #
 # just compile of bash one-string useful commands 
 
-
+echo "---------\n\nTHIS IS NO SCRIPT FILE\n\n----------"
+exit 0
 
 #------------------------------list net devices
 lspci | egrep -i --color 'network|ethernet'
@@ -147,10 +149,11 @@ ffmpeg -f concat -i input.list -y -vcodec copy -acodec copy output.mp4
 
 file 'd:/tempffmpeg/mov1.ts'
 file 'd:/tempffmpeg/mov2.ts'
---------------------
+#--------------------
 
 #make feh vindow with zoom and none borders 1-key use for action copy image
 
+<<<<<<< HEAD
 feh -g 640x720  -ZGx --action1 "cp %F  /run/user/1000/gvfs/smb-share\:server\=192.168.0.56\,share\=cirno/dir/" 
 /run/user/1000/gvfs/smb-share\:server\=192.168.0.56\,share\=cirno/anime_art/authors/name/*
 
@@ -187,3 +190,49 @@ ffmpeg -i 2f.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts 2f.ts
 # merge
 ffmpeg -i "concat:1f.ts|2f.ts" -bsf:a aac_adtstoasc -c copy output.mp4
 #------------------------------
+
+
+=======
+feh -g 640x720  -ZGx --action1 "cp %F  /run/user/1000/gvfs/smb-share\:server\=192.168.0.56\,share\=name/dir/" 
+/run/user/1000/gvfs/smb-share\:server\=192.168.0.56\,share\=name/anime_art/authors/name/*
+
+
+
+
+#-----
+#convert(imegemagick)
+# main useful utilites [convert identify display]
+
+# resize
+# in first fix 1200x800 in second 800 pixels wide adaptivity
+convert img.jpg -resize 1200x800 out.jpg
+convert img.jpg -resize x800 out.jpg
+
+# яркость контрастность
+convert img.jpg -contrast-stretch 10% -modulate 80% out.jpg
+
+#JOIN
+#join horizontal
+convert img1.jpg img2.jpg +append out.jpg
+#join vertical
+convert img1.jpg img2.jgp -append out.jpg
+
+#BORDER
+# add white 5 pixel border around (+5x+5 = imgH+5px*imgW+5px)
+convert res.jpg -border 5x5 -bordercolor white out.jpg
+
+#work_with_CD_and_DVD
+#make .iso
+ mkisofs -r -J -iso-level 4 -o burn.iso /path
+# -r Rock Rage (multisession)
+# -J JOIET (for win use)
+# -iso-level 4 (unlimited name len)
+# -o <output_file.iso>
+#burn disk
+ cdrecord -v -multi dev=ATAPI:0,0,0 driveropts=burnfree speed=4 burn.iso
+# -v verbose
+# -multi multisession
+# dev (known from dev=ATA/ATAPI -scanbus)
+# driveropts=burnfree (!!! IMPORTANT)
+# speed - burn speed
+>>>>>>> 8145f9776b4f8145d712ad962d021da53178e460
