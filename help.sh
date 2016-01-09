@@ -164,6 +164,8 @@ ffmpeg.exe -framerate 5 -loop 1 -i b%01d.jpg -preset veryfast -crf 28 -vf "fps=2
 
 #-------------------------------
 # crossfade 960x720 - frame size
+# fade st=4 && PTS-STARTPTS+4 - 4 sec where fade
+# trim=duration=9  - all time
 #
 ffmpeg -i 1.mp4 -i 2.mp4 -f lavfi -i color=black -filter_complex \
 "[0:v]format=pix_fmts=yuva420p,fade=t=out:st=4:d=1:alpha=1,setpts=PTS-STARTPTS[va0];\
