@@ -193,6 +193,13 @@ ffmpeg -i 2f.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts 2f.ts
 ffmpeg -i "concat:1f.ts|2f.ts" -bsf:a aac_adtstoasc -c copy output.mp4
 #------------------------------
 
+#------------------
+# crop to 2x3
+ffmpeg.exe -i comp.avi -vf "crop=2/3*in_w:2/3*in_h" comp1.avi
+
+#--------
+# video + audio
+
 
 =======
 feh -g 640x720  -ZGx --action1 "cp %F  /run/user/1000/gvfs/smb-share\:server\=192.168.0.56\,share\=name/dir/" 
