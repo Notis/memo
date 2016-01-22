@@ -244,4 +244,8 @@ convert res.jpg -border 5x5 -bordercolor white out.jpg
 # dev (known from dev=ATA/ATAPI -scanbus)
 # driveropts=burnfree (!!! IMPORTANT)
 # speed - burn speed
->>>>>>> 8145f9776b4f8145d712ad962d021da53178e460
+
+## pdf  merge ps merge
+#------------------------
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pswrite -sOutputFile=merged.ps f1.ps f2.ps f3.ps
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf f1.pdf f2.pdf f3.pdf
