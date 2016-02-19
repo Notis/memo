@@ -249,3 +249,6 @@ convert res.jpg -border 5x5 -bordercolor white out.jpg
 #------------------------
 gs -dBATCH -dNOPAUSE -q -sDEVICE=pswrite -sOutputFile=merged.ps f1.ps f2.ps f3.ps
 gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf f1.pdf f2.pdf f3.pdf
+
+#nrg 2 iso
+dd if=image.nrg of=image.iso bs=307200 skip=1
