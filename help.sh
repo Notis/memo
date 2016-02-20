@@ -257,3 +257,4 @@ dd if=image.nrg of=image.iso bs=307200 skip=1
 cdrecord blank=fast
 cdrecord blank=all
 
+mbrowse -- snmp browser
