@@ -252,3 +252,6 @@ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf f1.pdf f2.pdf 
 
 #nrg 2 iso
 dd if=image.nrg of=image.iso bs=307200 skip=1
+
+#nmap
+nmap -sP 192.168.0.0/24 - fast ping scan
