@@ -206,6 +206,9 @@ feh -g 640x720  -ZGx --action1 "cp %F  /run/user/1000/gvfs/smb-share\:server\=19
 /run/user/1000/gvfs/smb-share\:server\=192.168.0.56\,share\=name/anime_art/authors/name/*
 
 
+###
+##mount options
+/dev/sdb1 /mnt  -o  iocharset=utf8,codepage=866
 
 
 #-----
@@ -253,8 +256,28 @@ gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=merged.pdf f1.pdf f2.pdf 
 #nrg 2 iso
 dd if=image.nrg of=image.iso bs=307200 skip=1
 
+<<<<<<< HEAD
 #clear CDRW-fast
 cdrecord blank=fast
 cdrecord blank=all
 
 mbrowse -- snmp browser
+=======
+#nmap
+nmap -sP 192.168.0.0/24 - fast ping scan
+>>>>>>> 75843804046604735f59f294977e666841e1df53
+
+# convert png to tiff
+convert zayavk3-11.png -colors 4 -background white -alpha Remove -compress LZW  zayavk3-11.tif
+
+#NTP client command
+#On to measure the frequency calibration for your system.
+#If you're in a hurry, it's OK to only spend 20 minutes on this step.
+
+ntpclient -i 60 -c 20 -h $NTPHOST >$(hostname).ntp.log &
+
+#    Otherwise, you will learn much more about your system and its 
+#    communication
+#    with the NTP server by letting the log run for 24 hours.
+ntpclient -i 300 -c 288 -h $NTPHOST >$(hostname).ntp.log
+
