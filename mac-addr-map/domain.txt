@@ -1,0 +1,51 @@
+$TTL 1W
+@       IN      SOA     zuts. root.zuts.  (
+                                      2008122601 ; Serial
+                                      28800      ; Refresh
+                                      14400      ; Retry
+                                      604800     ; Expire - 1 week
+                                      86400 )    ; Minimum
+@               IN      NS      localhost.
+@               IN      A       192.168.1.1
+
+@               IN      AAAA    ::1
+
+;; machines
+
+www		A	192.168.1.1
+a3		A	192.168.1.71
+1cv8		A	192.168.1.100
+cisco2960	A	192.168.1.50
+hp-v1905	A	192.168.1.20
+oldserver	A	192.168.1.222
+video1		A	192.168.1.110
+ats		A	192.168.1.250
+boss		A	192.168.1.10
+security1	A	192.168.1.62
+buh4		A	192.168.1.46
+glavbuh		A	192.168.1.41
+elcom		A	192.168.1.40
+mishin		A	192.168.1.60
+cherkashin	A	192.168.1.51
+momiji		A	192.168.1.150
+admin		A	192.168.1.150
+inubashiri	A	192.168.1.150
+sale00		A	192.168.1.12
+sale01		A	192.168.1.11
+evdokimov	A	192.168.1.78
+security0	A	192.168.1.57
+snab0		A	192.168.1.59
+snab1		A	192.168.1.16
+constructor1	A	192.168.1.14
+lab		A	192.168.1.7
+constructor3	A	192.168.1.175
+reseption	A	192.168.1.5
+sale00		A	192.168.1.12
+sale03		A	192.168.1.72
+alex		A	192.168.1.73
+vadim		A	192.168.1.74
+
+tel144		A	192.168.1.244
+
+	
+

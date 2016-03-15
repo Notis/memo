@@ -1,0 +1,11 @@
+04-22 13:57 <== <> ну ты молодец, чо                                                                                                             
+                defaults.pcm.device 0                                                                                                                  
+                                                                                                                                                       
+04-22 13:59 <== <> вот эти штуки тебе нужно поменять и въебать в /etc/asound.conf или ~/.asoundrc                                                
+04-22 14:00 <== <> вообще сделай grep ^defaults /usr/share/alsa/alsa.conf и посмотри на переменные                                               
+04-22 14:00 <== <> там много интересного                                                                                                         
+04-22 14:00 <== <> Snaily: тебе нужно индекс устройствам задать, чтоб не плавали по типу:                                                        
+                options snd-hda-intel index=0                                                                                                          
+                options snd-hda-nvdia index=1                                                                                                          
+                и тд в /etc/modprobe.d/alsa.conf или /etc/conf.d/modules                                                                               
+04-22 14:03 <== <> Mellon: это часто не работает или работает неадекватно            

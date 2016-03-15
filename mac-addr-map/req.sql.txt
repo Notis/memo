@@ -1,0 +1,14 @@
+#выборка только подходящих
+select cisco.port, dhcp.mac, dhcp.name, dhcp.ip from cisco, dhcp Where cisco.mac = dhcp.mac or dhcp.mac = null order by port;
+
+#выборка всех, даже если не подходят
+select * from cisco left outer join dhcp on cisco.mac = dhcp.mac order by 
+port; 
+
+#выборка из 3 таблиц с присоединением
+select * from cisco left outer join dhcp on cisco.mac = dhcp.mac left outer join dns on dhcp.ip = dns.ip order by port asc;
+
+# чистка от аналогов
+CREATE TABLE `table_tmp` SELECT DISTINCT * FROM `table`;
+DROP TABLE `table`;
+RENAME TABLE `table_tmp` TO `table`;

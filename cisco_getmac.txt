@@ -1,0 +1,1 @@
+show mac-address interface fa0/xx

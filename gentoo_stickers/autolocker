@@ -1,0 +1,1 @@
+exec xautolock -time 5 -locker 'i3lock -i /home/momiji/.i3/i3lock.png' 

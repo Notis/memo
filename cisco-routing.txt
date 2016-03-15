@@ -1,0 +1,21 @@
+5-22 09:08 <== <1> interface Gi0/1                                                                                                                                  
+                ip address 192.168.1.0 255.255.255.0                                                                                                                    
+                exit                                                                                                                                                    
+                interface gi1/1                                                                                                                                         
+                ip address 192.168.2.0 255.255.255.0                                                                                                                    
+                exit                                                                                                                                                    
+                ip route default 192.168.1.1
+
+
+ <1> ! vlan 1                                                                                                                                         
+                interface gi0/1.1                                                                                                                                       
+                encapsulation dot1q                                                                                                                                     
+                ip address 192.168.1.1 255.255.255.0                                                                                                                    
+                exit                                                                                                                                                    
+                ! vlan 2                                                                                                                                                
+                interface gi0/1.2                                                                                                                                       
+                encapsulation dot1q                                                                                                                                     
+                ip address 192.168.2.0 255.255.255.0                                                                                                                    
+                exit  
+
+<1> encapsulation dot1q <номер влана>                                                                                                        

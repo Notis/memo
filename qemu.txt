@@ -1,0 +1,1 @@
+sudo qemu-kvm -m 512 -hda test.img -cdrom ~/inst/winXPsp2\(rus\).iso -boot d -localtime -vga std
