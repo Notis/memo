@@ -270,6 +270,10 @@ nmap -sP 192.168.0.0/24 - fast ping scan
 # convert png to tiff
 convert zayavk3-11.png -colors 4 -background white -alpha Remove -compress LZW  zayavk3-11.tif
 
+#convert pdf to jpeg (resize)
+convert -verbose -density 300 -trim *.pdf -quality 100 -sharpen 0x1.0 page.jpg
+
+
 #NTP client command
 #On to measure the frequency calibration for your system.
 #If you're in a hurry, it's OK to only spend 20 minutes on this step.
