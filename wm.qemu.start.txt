@@ -1,0 +1,21 @@
+#!/usr/bash
+
+
+#######################33
+#
+#
+#
+
+# бриджи
+
+brctl addbr br0
+brctl addif br0 enp1s0
+
+
+#запуск qemu 
+qemu-kvm -m 2048 -hda ~/wm/win7-sys.qvd -cdrom ~/inst/win7-multiboot.iso -boot c -net nic -net user -localtime -redir tcp:3389::3389
+
+
+-net tap,ifname=tap0,script=no,downscript=no -net nic,model=virtio,macaddr=00:12:34:56:78:9a
+
+

@@ -1,0 +1,16 @@
+ZUTSGW notis # iptables -t nat -S
+-P PREROUTING ACCEPT
+-P INPUT ACCEPT
+-P OUTPUT ACCEPT
+-P POSTROUTING ACCEPT
+-A POSTROUTING -s 192.168.100.0/24 -o eth0 -j MASQUERADE
+
+
+ZUTSGW notis # iptables -t mangle -S
+-P PREROUTING ACCEPT
+-P INPUT ACCEPT
+-P FORWARD ACCEPT
+-P OUTPUT ACCEPT
+-P POSTROUTING ACCEPT
+-A PREROUTING -s 192.168.100.0/24 -p tcp -m tcp --dport 80 -j TPROXY --on-port 3129 --on-ip 0.0.0.0 --tproxy-mark 0x0/0x0
+-A PREROUTING -s 192.168.100.0/24 -p tcp -m tcp --dport 443 -j TPROXY --on-port 3129 --on-ip 0.0.0.0 --tproxy-mark 0x0/0x0
