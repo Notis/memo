@@ -6,16 +6,42 @@
 #
 #
 
-# бриджи
-
-brctl addbr br0
-brctl addif br0 enp1s0
 
 
-#запуск qemu 
+1. ставим поддержку бриджей в ядре
+2. ставим поддержку модуля xt_physdev
+3. ставим поддержу модуля tun
+4. уставнавливаем sysctl в
+	net.bridge.bridge-nf-call-ip6tables = 0
+	net.bridge.bridge-nf-call-iptables = 0
+	net.bridge.bridge-nf-call-arptables = 0
+5. настраиваем столы 
+	iptables -I FORWARD -m physdev --physdev-is-bridged -j ACCEPT
+6. поднимаем tap интерфейс
+	ip tuntap add dev tap$n mode tap user $USER group $GROUP
+7. поднимаем пустой бридж
+	brctl addbr br$n
+### !!!! ВАЖНО (при работе на удаленке следующие настройки нужно делать в конфигах
+8. флешим (если нужно) tap$n и внешний eth$n
+	ip a flush eth$n
+9. добавляем интерфесы в бридж
+	brctl addif br$n eth$n
+	brctl addif br$n tap$n
+10. настраиваем внешний адрес хостовой машины для бриджа как для физического
+интерфейса
+	br$n = eth$n
+11. запускаем qemu c параметрами -net tap,ifname=tap0,script=no,downscript=no -net nic
+
+#---------------------------
+#вариации запуска qemu 
+# запуск с 2Gb оперативы готового диска с монтированным CD в образ iso с
+# загрузкой с диска С:(hdc) c монтирование сети под юзером с отктытием порта
+# RDP
+
 qemu-kvm -m 2048 -hda ~/wm/win7-sys.qvd -cdrom ~/inst/win7-multiboot.iso -boot c -net nic -net user -localtime -redir tcp:3389::3389
 
 
--net tap,ifname=tap0,script=no,downscript=no -net nic,model=virtio,macaddr=00:12:34:56:78:9a
+# c указанием сетевого драйвера и мак адреса
+ -net tap,ifname=tap0,script=no,downscript=no -net nic,model=virtio,macaddr=00:12:34:56:78:9a
 
 
