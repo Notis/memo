@@ -285,3 +285,5 @@ ntpclient -i 60 -c 20 -h $NTPHOST >$(hostname).ntp.log &
 #    with the NTP server by letting the log run for 24 hours.
 ntpclient -i 300 -c 288 -h $NTPHOST >$(hostname).ntp.log
 
+#gsm
+ffmpeg -i oppa1.wav -acodec gsm_ms -ar 8k -ac 1 -ab 13k  oppa2.wav
