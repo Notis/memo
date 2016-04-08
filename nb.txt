@@ -1,0 +1,71 @@
+p/n: K1X00EA#ACB
+name: HP 15-g501nr
+s/n: CND447H79X
+rev 21F7-100
+all hp recovery
+
+
+756075-252_15-g002sr_start.tib
+
+
+
+##magnet:?xt=urn:btih:45235F165670B806F82C5E5B9A7C07ADF770A3AF&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet
+##magnet:?xt=urn:btih:45235F165670B806F82C5E5B9A7C07ADF770A3AF&kt=756075-252&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet
+
+
+
+
+kt
+756075-252  - 5FEB64668D64856687E577951EE134E1DF70675E
+
+magnet:?xt=urn:btih:5FEB64668D64856687E577951EE134E1DF70675E
+
+magnet:?xt=urn:btih:5FEB64668D64856687E577951EE134E1DF70675E&tr=udp://tracker.openbittorrent.com:80/announce&tr=udp://tracker.publicbt.com:80/announce&tr=udp://tracker.istole.it:80/announce
+
+magnet:?xt=urn:btih:5FEB64668D64856687E577951EE134E1DF70675E&tr=http%3A%2F%2Fbt4.t-ru.org%2Fann%3Fmagnet
+
+
+magnet:?xt=urn:btih:5FEB64668D64856687E577951EE134E1DF70675E&tr=http://9.rarbg.com:2710/announce&tr=http://announce.torrentsmd.com:6969/announce&tr=http://bt.careland.com.cn:6969/announce&tr=http://explodie.org:6969/announce&tr=http://mgtracker.org:2710/announce&tr=http://tracker.best-torrents.net:6969/announce&tr=http://tracker.tfile.me/announce&tr=http://tracker.torrenty.org:6969/announce&tr=http://tracker1.wasabii.com.tw:6969/announce&tr=udp://9.rarbg.com:2710/announce&tr=udp://9.rarbg.me:2710/announce&tr=udp://coppersurfer.tk:6969/announce&tr=udp://exodus.desync.com:6969/announce&tr=udp://open.demonii.com:1337/announce&tr=udp://tracker.btzoo.eu:80/announce&tr=udp://tracker.istole.it:80/announce&tr=udp://tracker.openbittorrent.com:80/announce&tr=udp://tracker.prq.to/announceudp://tracker.publicbt.com:80/announce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80 
+
+
+magnet:?xt=urn:btih:
+
+
+magnet:?xt=urn:btih:'.%20bin2hex($infohash)%20.'&tr='.%20urlencode($bb_cfg['bt_announce_url']%20.%20$passkey_url)%20.'
+
+
+
+
+
+==================
+Параметры
+
+dn (Display Name) — Имя файла
+xl (eXact Length) — Размер файла в байтах
+dl (Display Length) — Отображаемый размер в байтах
+xt (eXact Topic) — URN, содержащий хеш файла
+as (Acceptable Source) — Веб-ссылка на файл в Интернете
+xs (eXact Source) — P2P ссылка
+kt (Keyword Topic) — Ключевые слова для поиска
+mt (Manifest Topic) — Ссылка на метафайл, который содержит список магнетов
+(MAGMA)
+tr (TRacker) — Адрес трекера для BitTorrent клиентов.
+
+Магнитная ссылка начинается с зарезервированной комбинации символов
+"magnet:?", далее следуют параметры ссылки, обычно в виде
+
+magnet:?xt=urn:btih:E40CDFE227F9B9ED80A5CC2A151CD5BEE6B3C0A2&xl=272091&dn=Test.mp3&<тут
+еще куча всего>
+
+Но для нормальной работы (приема файла) необходим только хеш, так что если
+ссылка имеет вид
+
+magnet:?xt=urn:btih:E40CDFE227F9B9ED80A5CC2A151CD5BEE6B3C0A2
+
+
+
+
+
+magnet:?xt=urn:btih:5FEB64668D64856687E577951EE134E1DF70675E&tr=http%3A%2F%2F9.rarbg.com%3A2710%2Fannounce&tr=http%3A%2F%2Fannounce.torrentsmd.com%3A6969%2Fannounce&tr=http%3A%2F%2Fbt.careland.com.cn%3A6969%2Fannounce&tr=http%3A%2F%2Fexplodie.org%3A6969%2Fannounce&tr=http%3A%2F%2Fmgtracker.org%3A2710%2Fannounce&tr=http%3A%2F%2Ftracker.best-torrents.net%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker.tfile.me%2Fannounce&tr=http%3A%2F%2Ftracker.torrenty.org%3A6969%2Fannounce&tr=http%3A%2F%2Ftracker1.wasabii.com.tw%3A6969%2Fannounce&tr=udp%3A%2F%2F9.rarbg.com%3A2710%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2710%2Fannounce&tr=udp%3A%2F%2Fcoppersurfer.tk%3A6969%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Fopen.demonii.com%3A1337%2Fannounce&tr=udp%3A%2F%2Ftracker.btzoo.eu%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.istole.it%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.prq.to%2Fannounceudp&tr=http%3A%2F%2Ftracker.publicbt.com%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&tr=udp%3A%2F%2Ftracker.ccc.de%3A80
+
+
