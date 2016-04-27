@@ -291,3 +291,13 @@ ffmpeg -i oppa1.wav -acodec gsm_ms -ar 8k -ac 1 -ab 13k  oppa2.wav
 vnstat - статистика сети
 iperf - скорость канала
 ethtool - тулы для езернетов
+
+[I] app-text/texlive-core
+[I] dev-texlive/texlive-basic
+[I] dev-texlive/texlive-documentation-base
+[I] dev-texlive/texlive-fontutils
+[I] dev-texlive/texlive-genericrecommended
+[I] dev-texlive/texlive-latex
+[I] dev-texlive/texlive-latexrecommended
+[I] dev-texlive/texlive-texinfo 
+utf8    dev-texlive/texlive-latexextra 
