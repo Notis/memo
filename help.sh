@@ -300,4 +300,7 @@ ethtool - тулы для езернетов
 [I] dev-texlive/texlive-latex
 [I] dev-texlive/texlive-latexrecommended
 [I] dev-texlive/texlive-texinfo 
-utf8    dev-texlive/texlive-latexextra 
+utf8    dev-texlive/texlive-latexextra
+
+# gs pdf merge
+gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=all.pdf -dBATCH list1.pdf list2.pdf list3.pdf
