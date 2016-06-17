@@ -304,3 +304,9 @@ utf8    dev-texlive/texlive-latexextra
 
 # gs pdf merge
 gs -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=all.pdf -dBATCH list1.pdf list2.pdf list3.pdf
+
+
+# convert MAC xx:xx:xx:xx:xx:xx to cisco xxxx.xxxx.xxxx
+awk -F: '{print $1$2"."$3$4"."$5$6}'
+
+
