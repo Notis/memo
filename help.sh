@@ -312,3 +312,7 @@ awk -F: '{print $1$2"."$3$4"."$5$6}'
 # recode zip rus files
 inzip file.zip
 find . -type f -exec sh -c 'np=`echo {}|iconv -f cp1252 -t cp850| iconv -f cp866`; mv "{}" "$np"' \;
+
+
+useradd borschev -M -G proj -s /sbin/nologin
+
