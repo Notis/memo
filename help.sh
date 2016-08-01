@@ -313,6 +313,9 @@ awk -F: '{print $1$2"."$3$4"."$5$6}'
 inzip file.zip
 find . -type f -exec sh -c 'np=`echo {}|iconv -f cp1252 -t cp850| iconv -f cp866`; mv "{}" "$np"' \;
 
-
+# add user borschev and add to graoup proj and nologin
 useradd borschev -M -G proj -s /sbin/nologin
+#list samba users
+sudo pdbedit -L -v | grep Unix\ username
+
 
