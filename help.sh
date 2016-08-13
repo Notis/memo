@@ -318,4 +318,5 @@ useradd borschev -M -G proj -s /sbin/nologin
 #list samba users
 sudo pdbedit -L -v | grep Unix\ username
 
-
+#показать  привязку кнопок key bindings
+ xmodmap -pke
