@@ -320,3 +320,6 @@ sudo pdbedit -L -v | grep Unix\ username
 
 #показать  привязку кнопок key bindings
  xmodmap -pke
+
+#xps to pdf
+gxps -o output.pdf -sDEVICE=pdfwrite input.xps
