@@ -323,3 +323,7 @@ sudo pdbedit -L -v | grep Unix\ username
 
 #xps to pdf
 gxps -o output.pdf -sDEVICE=pdfwrite input.xps
+
+# прибавление даты
+date -d '2016-09-01 + 90 day'
+
