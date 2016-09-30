@@ -330,3 +330,7 @@ date -d '2016-09-01 + 90 day'
 #convert to print(XEROX)
 mkdir ./mono ; for i in *.jpg ; do convert $i -threshold 75% ./mono/$i ; done
 
+
+#vim print rus
+:%w !lpr
+
