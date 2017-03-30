@@ -315,7 +315,7 @@ find . -type f -exec sh -c 'np=`echo {}|iconv -f cp1252 -t cp850| iconv -f cp866
 
 # add user borschev and add to graoup proj and nologin
 useradd borschev -M -G proj -s /sbin/nologin
-#list samba users
+#list samba users (smb)
 sudo pdbedit -L -v | grep Unix\ username
 
 #показать  привязку кнопок key bindings
