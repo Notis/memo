@@ -340,4 +340,5 @@ sudo cat /var/log/samba/audit.log | sed -e 's/ZUTSGW\ smbd_audit\[.*\]//' | uniq
 # date convert to DATETIME mysql and cp1251 to current locale
 cat /tmp/Report_01012017-31012017_1_of_1.csv | sed -E 's,([0-9]{2}).([0-9]{2}).([0-9]{4}),\3-\2-\1,g' | iconv -f cp1251
 #full_ver
- cat /tmp/Report_01012017-31012017_1_of_1.csv | sed -E 's,([0-9]{2})\.([0-9]{2})\.([0-9]{4}),\3\2\1,g' | iconv -f cp1251 | cat -n | sed -e 's/^[ \t]*//' -e 's/[\t ]2017/;2017/' -e 's/://g' | sed -E 's,([0-9]{8}) ([0-9]{4}),\1\2,g' | sed -e s/\"\"//
+cat /tmp/Report_01012017-31012017_1_of_1.csv | sed -E 's,([0-9]{2})\.([0-9]{2})\.([0-9]{4}),\3\2\1,g' | iconv -f cp1251 | cat -n | sed -e 's/^[ \t]*//' -e 's/[\t ]2017/;2017/' -e 's/://g' | sed -E 's,([0-9]{8}) ([0-9]{6}),\1\2,g' | sed -e s/\"\"// | sed -E 's, ([0-9]{4}),\100,g' > rep.data 
+
