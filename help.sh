@@ -336,3 +336,6 @@ mkdir ./mono ; for i in *.jpg ; do convert $i -threshold 75% ./mono/$i ; done
 
 # parser samba logs
 sudo cat /var/log/samba/audit.log | sed -e 's/ZUTSGW\ smbd_audit\[.*\]//' | uniq | sed -e 's/ : //'|awk -F "|" ' { printf "%s %s %s\t%s\t", $1, $2, $3, $4 }   $5 == "unlink"  {printf "\033[31m"} $5 == "rename" {print "\033[33m"} $5=="open" && $7=="w" {printf "\033[35m"} { printf "%s\033[0m %s %s\n", $5, $7, $8 } '
+
+# date convert to DATETIME mysql and cp1251 to current locale
+cat /tmp/Report_01012017-31012017_1_of_1.csv | sed -E 's,([0-9]{2}).([0-9]{2}).([0-9]{4}),\3-\2-\1,g' | iconv -f cp1251
