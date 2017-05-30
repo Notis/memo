@@ -344,3 +344,29 @@ cat /tmp/Report_01012017-31012017_1_of_1.csv | sed -E 's,([0-9]{2})\.([0-9]{2})\
 
 # генерит рандомное имя файла pwgen-ом
 "$(pwgen 10 1).arc"
+
+
+fdupes -r /home/user/downloads
+
+ключ -r — заставляет искать в том числе и в подкаталогах, ниже заданного.
+
+Перенаправление в файл — удобно, если список дубликатов слишком большой:
+
+fdupes -r /home/user/downloads > /home/user/duplicates.txt
+
+Поиск файлов повторяющихся более одного раза и сохранение результатов в файл:
+
+awk 'BEGIN{d=0} NF==0{d=0} NF>0{if(d)print;d=1}' /home/user/duplicates.txt > /home/user/duplicates.to.delete.txt
+
+Заключение всех строк имен файлов в апострофы (чтобы исключить влияние пробелов в именах для следующей команды rm)
+
+sed "s/\(.*\)/'\1'/" /home/user/duplicates.to.delete.txt  > /home/user/duplicates.to.delete.ok.txt
+
+Удаление файлов повторяющихся более одного раза:
+
+xargs rm < /home/user/duplicates.to.delete.ok.txt
+
+
+Этой командой производится поиск и удаление (ключ -d) дубликатов без дополнительных подтверждений на удаление (ключ -N) в текущей директории.
+
+fdupes -d -N /home/user/download
