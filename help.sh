@@ -370,3 +370,6 @@ xargs rm < /home/user/duplicates.to.delete.ok.txt
 Этой командой производится поиск и удаление (ключ -d) дубликатов без дополнительных подтверждений на удаление (ключ -N) в текущей директории.
 
 fdupes -d -N /home/user/download
+
+#dvd rip
+ffmpeg -i concat:VTS_01_1.VOB\|VTS_01_2.VOB\|VTS_01_3.VOB -map 0:v:0 -map 0:a:0 -f mpeg -c copy intermediate.mpeg
