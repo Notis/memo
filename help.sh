@@ -373,3 +373,10 @@ fdupes -d -N /home/user/download
 
 #dvd rip
 ffmpeg -i concat:VTS_01_1.VOB\|VTS_01_2.VOB\|VTS_01_3.VOB -map 0:v:0 -map 0:a:0 -f mpeg -c copy intermediate.mpeg
+
+
+#tpcdump
+
+# only sync packets
+tcpdump -nnv -i eth0 src 192.168.1.92 and "tcp[13] == 2"
+tcpdump -nnvvv -i eth0 src 192.168.1.151 and "tcp[tcpflags] & (tcp-syn|tcp-ack) != 0"
