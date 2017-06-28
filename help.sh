@@ -240,6 +240,8 @@ convert res.jpg -border 5x5 -bordercolor white out.jpg
 # -J JOIET (for win use)
 # -iso-level 4 (unlimited name len)
 # -o <output_file.iso>
+mkisofs -iso-level=4 -udf -o <filename> <каталог с файлами>
+# -udf = UDF mode
 #burn disk
  cdrecord -v -multi dev=ATAPI:0,0,0 driveropts=burnfree speed=4 burn.iso
 # -v verbose
