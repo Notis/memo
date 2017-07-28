@@ -382,3 +382,6 @@ ffmpeg -i concat:VTS_01_1.VOB\|VTS_01_2.VOB\|VTS_01_3.VOB -map 0:v:0 -map 0:a:0 
 # only sync packets
 tcpdump -nnv -i eth0 src 192.168.1.92 and "tcp[13] == 2"
 tcpdump -nnvvv -i eth0 src 192.168.1.151 and "tcp[tcpflags] & (tcp-syn|tcp-ack) != 0"
+
+#pdf rotate
+gs -sDEVICE=pdfwrite -sOutputFile="out.test" -dNOPAUSE -dEPSCrop -c "<</Orientation 0>> setpagedevice" -f "in.pdf" -c quit
