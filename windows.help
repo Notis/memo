@@ -1,0 +1,6 @@
+
+Удаление ключа активации Windows
+slmgr.vbs /upk
+
+новый ключ (не всегда работает)
+slmgr.vbs /ipk xxxx-xxxx-xxxx-xxxx-xxxx

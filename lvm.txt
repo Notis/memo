@@ -1,0 +1,7 @@
+пересунуть с винта на винт                                                                                                                                                                      
+                pvcreate /dev/sdX                                                                                                                                                             
+                vgextend /dev/vg0 /dev/sdX                                                                                                                                                    
+                lvcreate -n shit-new -L<size of shit> /dev/vg0 /dev/sdx                                                                                                                       
+                ddrescue /dev/vg0/shit /dev/vg0/shit-new /var/tmp/mapfile                                                                                                                     
+                lvremove /dev/vg0/shit                                                                                                                                                        
+                lvrename /dev/vg0/shit-new vg0/shit   
