@@ -385,3 +385,7 @@ tcpdump -nnvvv -i eth0 src 192.168.1.151 and "tcp[tcpflags] & (tcp-syn|tcp-ack) 
 
 #pdf rotate
 gs -sDEVICE=pdfwrite -sOutputFile="out.test" -dNOPAUSE -dEPSCrop -c "<</Orientation 0>> setpagedevice" -f "in.pdf" -c quit
+
+
+#rename file to hash
+for F in *.* ; do echo mv "$F" "$(sha512sum "$F" | cut -d' ' -f1).${F##*.}"; done
