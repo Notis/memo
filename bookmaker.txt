@@ -5,8 +5,10 @@
 poppler-utils
 psutils
 
-pdftops foo.pdf - | psbook | psnup -l -pa4 -2 | psselect -o -r | lpr 
 
+пвперед
+pdftops foo.pdf - | psbook | psnup -l -pa4 -2 | psselect -o | lpr 
+надзад
 3) переворачиваем "вверх дном" распечатанную стопку листов и вставляем вновь во входной лоток
 pdftops foo.pdf - | psbook | psnup -l -pa4 -2 | psselect -e -r | lpr 
 
