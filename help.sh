@@ -320,6 +320,10 @@ useradd borschev -M -G proj -s /sbin/nologin
 #list samba users (smb)
 sudo pdbedit -L -v |  grep -e 'Unix\ username' -e 'Flags'
 
+# mod user groups
+usermod -aG $gorupname $username
+
+
 #показать  привязку кнопок key bindings
  xmodmap -pke
 
