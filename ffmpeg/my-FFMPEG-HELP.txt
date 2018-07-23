@@ -1,0 +1,15 @@
+ffmpeg.exe -i bigfile.mp4 -vf scale=-1:720 -c:v h264_nvenc -preset slow -tune film -b:v 2600k -pass 1 -c:a aac -strict -2 -b:a 128k -f mp4 NUL
+ffmpeg.exe -i bigfile.mp4 -vf scale=-1:720 -c:v h264_nvenc -preset slow -tune film -b:v 2600k -pass 2 -c:a aac -strict -2 -b:a 128k -f mp4 file.mp4
+
+
+ffmpeg -i MyMovie.mkv -vf scale=-1:720 -c:v libx264 -crf 0 -preset veryslow -c:a copy MyMovie_720p.mkv      
+
+
+-------------------------------------------
+ffmpeg -f concat -i <(for f in ./*.wav; do echo "file '$PWD/$f'"; done) -c copy output.wav
+ffmpeg -f concat -i <(printf "file '$PWD/%s'\n" ./*.wav) -c copy output.wav
+ffmpeg -f concat -i <(find . -name '*.wav' -printf "file '$PWD/%p'\n") -c copy output.wav
+-------------------------------------------
+
+show profiles
+ffmpeg -hide_banner -h encoder=h264_nvenc | xclip -sel clip
