@@ -9,25 +9,30 @@ def readadress(infile, addrcount):
     k = 0
     i = 0
     stroka = ""
-    with open(infile) as f:
-     for line in f:
-         # Do something with 'line'
-         if "EMAIL:" in line:
-             l = line.replace("EMAIL:","").replace("\n","")
-          
-             if i < addrcount:
-                 stroka = (stroka + l + ",")
-                 i=i+1
-             else:    
-                 i=0
-                 stroka = stroka[:-1]
-                 stroka = stroka + "\n--" + str(k) + "--\n"
-                 k=k+1
-    if stroka[-1] == ",":
-        return(stroka[:-1])
-#       print ("y")
-    else:
-        return stroka
+    try: 
+        with open(infile) as f:
+         for line in f:
+             # Do something with 'line'
+             if "EMAIL:" in line:
+                 l = line.replace("EMAIL:","").replace("\n","")
+              
+                 if i < addrcount:
+                     stroka = (stroka + l + ",")
+                     i=i+1
+                 else:    
+                     i=0
+                     stroka = stroka[:-1]
+                     stroka = stroka + "\n--" + str(k) + "--\n"
+                     k=k+1
+        if stroka[-1] == ",":
+            return(stroka[:-1])
+    #       print ("y")
+        else:
+            return stroka
+    except IOError: 
+        print("Error: File does not appear to exist.")
+    return 0 
+
 #-------------------------------------------------------------------
 
 # write file  ==============================================================
