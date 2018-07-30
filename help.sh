@@ -407,3 +407,16 @@ gunzip -c /path/to/backup.img.gz | dd of=/dev/sdX
 #or connect splits
 cat /path/to/backup.img.gz* | gunzip -c | dd of=/dev/sdX
 
+#DDRESQUE
+ddrescue -f -n /dev/sdX /dev/sdY rescue.log
+ #Second round, copy only the bad blocks and try 3 times to read from the source before giving up.
+ddrescue -d -f -r3 /dev/sdX /dev/sdY rescue.log
+
+#Now you can check the file system for corruption and mount the new drive.
+
+ fsck -f /dev/sdY
+
+
+
+
+
