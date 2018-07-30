@@ -393,3 +393,17 @@ gs -sDEVICE=pdfwrite -sOutputFile="out.test" -dNOPAUSE -dEPSCrop -c "<</Orientat
 
 #rename file to hash
 for F in *.* ; do echo mv "$F" "$(sha512sum "$F" | cut -d' ' -f1).${F##*.}"; done
+
+
+#backup_disk with dd and gzip
+sudo dd if=/dev/sdX conv=sync,noerror bs=64K | gzip -c | ssh user@local dd of=backup.img.gz
+#or
+dd if=/dev/sdX conv=sync,noerror bs=64K | gzip -c > backup.img.gz
+#or make splits
+dd if=/dev/sdX conv=sync,noerror bs=64K | gzip -c | split -a3 -b2G - /path/to/backup.img.gz
+#
+#RESTORE
+gunzip -c /path/to/backup.img.gz | dd of=/dev/sdX
+#or connect splits
+cat /path/to/backup.img.gz* | gunzip -c | dd of=/dev/sdX
+
