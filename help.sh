@@ -1,4 +1,4 @@
-#!/bin/bash
+#
 #
 #  !!!!THIS IS NO SCRIPT FILE!!!
 #
@@ -244,6 +244,7 @@ mkisofs -iso-level=4 -udf -o <filename> <каталог с файлами>
 # -udf = UDF mode
 #burn disk
  cdrecord -v -multi dev=ATAPI:0,0,0 driveropts=burnfree speed=4 burn.iso
+cdrecodr wodim
 # -v verbose
 # -multi multisession
 # dev (known from dev=ATA/ATAPI -scanbus)
@@ -267,7 +268,7 @@ mbrowse -- snmp browser
 =======
 #nmap
 nmap -sP 192.168.0.0/24 - fast ping scan
->>>>>>> 75843804046604735f59f294977e666841e1df53
+/cd>>>> 75843804046604735f59f294977e666841e1df53
 
 # convert png to tiff
 convert zayavk3-11.png -colors 4 -background white -alpha Remove -compress LZW  zayavk3-11.tif
