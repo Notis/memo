@@ -428,4 +428,7 @@ ddrescue -d -f -r3 /dev/sdX /dev/sdY rescue.log
  
  sox -t raw -r 8000 -c 2 -b 16 -e signed FILE.raw FILE.wav
 
+ make spectrogramm
+ 
+ sox "r_test.wav" -n spectrogram -Y 130 -l -r -o "r_test.png"
 
