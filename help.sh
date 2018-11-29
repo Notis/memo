@@ -418,6 +418,14 @@ ddrescue -d -f -r3 /dev/sdX /dev/sdY rescue.log
  fsck -f /dev/sdY
 
 
+# asterisk write audio (and convert)
 
+ write
+             chanel-v   bytelimit-v      v-stereo-rx-tx-channels
+ sudo dahdi_monitor 20 -vv -l 200000000 -s r_test.raw
+
+ converting (8Khz 16bit signed) default asterisk sox parameters
+ 
+ sox -t raw -r 8000 -c 2 -b 16 -e signed FILE.raw FILE.wav
 
 
