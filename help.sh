@@ -432,3 +432,6 @@ ddrescue -d -f -r3 /dev/sdX /dev/sdY rescue.log
  
  sox "r_test.wav" -n spectrogram -Y 130 -l -r -o "r_test.png"
 
+
+# выбрать почту email e-mail
+grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"
