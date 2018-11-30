@@ -435,3 +435,9 @@ ddrescue -d -f -r3 /dev/sdX /dev/sdY rescue.log
 
 # выбрать почту email e-mail
 grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"
+
+# массовая рассылка по списку (должны стоять опции set edit_headers=yes) 
+#  
+
+for i in `cat listfile.txt`;do cat Email.html | mutt -e "set content_type=text/html" -s "Subject" -F ~/.muttrc-custom -- $i < Email.html ; echo $i ; sleep 3 ; done
+
