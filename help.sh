@@ -443,3 +443,8 @@ for i in `cat listfile.txt`;do cat Email.html | mutt -e "set content_type=text/h
 
 # exif renamer
 exiftool '-filename<${DateTimeOriginal;tr/ /_/;s/__+/_/g;s/:/-/g}_${Make;tr/ /_/;s/__+/_/g;s/\//-/g}_${Model;tr/ /_/;s/__+/_/g;s/\//-/g;s/,//g}.jpg' ./*
+
+
+# convert and add watermark\\ mogrify ident 
+for i in bktp*.jpg ; do convert $i ../../watermark.png -resize "1024>x768>" -gravity center -composite wm_"$i" ; done
+
