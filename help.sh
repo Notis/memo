@@ -441,3 +441,5 @@ grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b"
 
 for i in `cat listfile.txt`;do cat Email.html | mutt -e "set content_type=text/html" -s "Subject" -F ~/.muttrc-custom -- $i < Email.html ; echo $i ; sleep 3 ; done
 
+# exif renamer
+exiftool '-filename<${DateTimeOriginal;tr/ /_/;s/__+/_/g;s/:/-/g}_${Make;tr/ /_/;s/__+/_/g;s/\//-/g}_${Model;tr/ /_/;s/__+/_/g;s/\//-/g;s/,//g}.jpg' ./*
