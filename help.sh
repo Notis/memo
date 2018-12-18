@@ -448,3 +448,8 @@ exiftool '-filename<${DateTimeOriginal;tr/ /_/;s/__+/_/g;s/:/-/g}_${Make;tr/ /_/
 # convert and add watermark\\ mogrify ident 
 for i in bktp*.jpg ; do convert $i ../../watermark.png -resize "1024>x768>" -gravity center -composite wm_"$i" ; done
 
+# удаление тумбнейлов, последующее создание их и обрезка под формат и запись в папку с таким же названием по другому пути.
+rm t_*.jpg ;for i in wm_*.jpg ; do convert $i -resize "180x135^" -gravity center -crop 180x135+0+0 +repage t_$i ; done ; cp t_* ~/cftp/files/el/worked/2018/`pwd | awk -F / '{print $NF}'
+
+# преобразовать в нижний регистр все имена файлов и папок
+for i in * ; do mv "$i" "`echo $i | sed 's/\(\w\)/\l\1/g'`" ; done
