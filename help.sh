@@ -235,12 +235,14 @@ convert res.jpg -border 5x5 -bordercolor white out.jpg
 
 #work_with_CD_and_DVD
 #make .iso
- mkisofs -r -J -iso-level 4 -o burn.iso /path
+#depricated mkisofs -r -J -iso-level 4 -o burn.iso /path
 # -r Rock Rage (multisession)
 # -J JOIET (for win use)
 # -iso-level 4 (unlimited name len)
 # -o <output_file.iso>
-mkisofs -iso-level=4 -udf -o <filename> <каталог с файлами>
+# Depricated mkisofs -iso-level=4 -udf -o <filename> <каталог с файлами>
+# new make iso
+genisoimage -iso-level 3 -J -joliet-long -rock -input-charset utf-8 -o disk.iso ./*
 # -udf = UDF mode
 #burn disk
  cdrecord -v -multi dev=ATAPI:0,0,0 driveropts=burnfree speed=4 burn.iso
