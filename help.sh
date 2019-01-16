@@ -455,3 +455,6 @@ rm t_*.jpg ;for i in wm_*.jpg ; do convert $i -resize "180x135^" -gravity center
 
 # преобразовать в нижний регистр все имена файлов и папок
 for i in * ; do mv "$i" "`echo $i | sed 's/\(\w\)/\l\1/g'`" ; done
+
+#autotrace (centerline)
+autotrace -centerline -color-count 2 -output-file /tmp/roma/outputtga.svg -output-format SVG /tmp/roma/scan.tga
