@@ -445,6 +445,8 @@ for i in `cat listfile.txt`;do cat Email.html | mutt -e "set content_type=text/h
 
 # exif renamer
 exiftool '-filename<${DateTimeOriginal;tr/ /_/;s/__+/_/g;s/:/-/g}_${Make;tr/ /_/;s/__+/_/g;s/\//-/g}_${Model;tr/ /_/;s/__+/_/g;s/\//-/g;s/,//g}.jpg' ./*
+# exif program
+for i in *.jpg ; do name=`exif -m --tag=DateTimeOriginal $i`.jpg ; name=`exif -m --tag=Model $i`_$name; name=`exif -m --tag=Make $i`_$name; name=`echo "$name" | sed 's/[ ,:]/-/g'` ; echo mv $i $name ; done
 
 
 # convert and add watermark\\ mogrify ident 
