@@ -460,3 +460,6 @@ for i in * ; do mv "$i" "`echo $i | sed 's/\(\w\)/\l\1/g'`" ; done
 
 #autotrace (centerline)
 autotrace -centerline -color-count 2 -output-file /tmp/roma/outputtga.svg -output-format SVG /tmp/roma/scan.tga
+
+# грабинг CD дисков
+abcde -a cddb,read,encode,tag,move,playlist,clean -d /dev/cdrom -o mp3:"-b 320" -V -x
