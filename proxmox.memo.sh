@@ -8,3 +8,11 @@ COOKIE="PVEAuthCookie=`cat 1.tmp`"; curl -k -b "$COOKIE" https://192.168.0.169:8
 COOKIE="PVEAuthCookie=`cat 1.tmp`"; ; curl -k -b "$COOKIE" https://192.168.0.169:8006/api2/json
 
 COOKIE="PVEAuthCookie=`cat 1.tmp`"; CSRF="CSRFPreventionToken: `cat 2.tmp`"; curl -k -b "$COOKIE" -H "$CSRF" -H "Content-Type: application/json"  -d '{userid:admin@pam}' https://192.168.0.169:8006/api2/json/access/users  | jq
+
+#get centos image name
+sudo pveam available --section system | grep 'centos-7' | awk '{ print $2 }'
+
+# download centos image to local storage
+sudo pveam download local $(sudo pveam available --section system | grep 'centos-7' | awk '{ print $2 }')
+
+
