@@ -14,5 +14,17 @@ sudo pveam available --section system | grep 'centos-7' | awk '{ print $2 }'
 
 # download centos image to local storage
 sudo pveam download local $(sudo pveam available --section system | grep 'centos-7' | awk '{ print $2 }')
+ 
 
 
+``` /etc/network/interfaces.new
++auto vmbr0
++iface vmbr0 inet static
++	address  192.168.0.170
++	netmask  24
++	gateway  192.168.0.1
++	bridge-ports none
++	bridge-stp off
++	bridge-fd 0
++#KAKAXA-bridge
+```
