@@ -463,3 +463,6 @@ autotrace -centerline -color-count 2 -output-file /tmp/roma/outputtga.svg -outpu
 
 # грабинг CD дисков
 abcde -a cddb,read,encode,tag,move,playlist,clean -d /dev/cdrom -o mp3:"-b 320" -V -x
+
+#ssh tunel
+ssh -L {local_port}:{remote_pc}:{remote_pc} {ssh_GW_ip} -l {user} -N
